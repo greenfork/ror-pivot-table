@@ -7,6 +7,7 @@ Run these commands to test:
 ```
 rails db:setup
 psql -d inventory_development -f db/seed.sql
+psql -d inventory_development -c 'create extension tablefunc;'
 rails server
 # visit http://localhost:3000
 ```
