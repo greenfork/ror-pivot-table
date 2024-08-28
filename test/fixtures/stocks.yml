@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: one
+  variant: one
+  warehouse_name: MyString
+  quantity: 1
+  datetime: 2024-08-28 23:20:52
+
+two:
+  product: two
+  variant: two
+  warehouse_name: MyString
+  quantity: 1
+  datetime: 2024-08-28 23:20:52
