@@ -2,18 +2,18 @@
   <thead>
     <tr>
       <th>
-        <span>Имя товара</span>
+        <a href="?sort=name">Имя товара</a>
       </th>
       <th>
-        <span>Артикул</span>
+        <a href="?sort=sku">Артикул</a>
       </th>
       <th>
-        <span>Имя склада</span>
+        <a href="?sort=warehouse">Имя склада</a>
       </th>
 
-      <% @range.each do |date| %>
+      <% @range.each_with_index do |date, idx| %>
         <th>
-          <%= date.strftime("%d.%m.%Y") %>
+          <a href="?sort=<%= "dat#{idx}" %>"><%= date.strftime("%d.%m.%Y") %></a>
         </th>
       <% end %>
     </tr>
@@ -21,13 +21,8 @@
   <tbody>
     <% @table_data.each do |row| %>
         <tr>
-          <td><%= row[:product_name] %></td>
-          <td><%= row[:variant_sku] %></td>
-          <td><%= row[:warehouse_name] %></td>
-          <% @range.each do |date| %>
-            <td>
-              <%= row[:stocks][date]&.quantity || 0 %>
-            </td>
+          <% row.each do |col| %>
+            <td><%= col %></td>
           <% end %>
         </tr>
       <% end %>

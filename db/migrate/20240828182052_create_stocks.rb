@@ -6,8 +6,6 @@ class CreateStocks < ActiveRecord::Migration[7.2]
       t.string :warehouse_name
       t.integer :quantity
       t.datetime :datetime
-
-      t.timestamps
     end
   end
 end

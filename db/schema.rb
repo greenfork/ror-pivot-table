@@ -16,8 +16,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_28_182052) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "stocks", force: :cascade do |t|
@@ -26,8 +24,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_28_182052) do
     t.string "warehouse_name"
     t.integer "quantity"
     t.datetime "datetime"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_stocks_on_product_id"
     t.index ["variant_id"], name: "index_stocks_on_variant_id"
   end
@@ -35,8 +31,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_28_182052) do
   create_table "variants", force: :cascade do |t|
     t.bigint "product_id", null: false
     t.string "sku"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_variants_on_product_id"
   end
 
