@@ -1,3 +1,5 @@
+Code is in `app/controllers/stocks_controller.rb` and `app/views/stocks/index.html.erb`.
+
 Run these commands to test:
 
 ```
