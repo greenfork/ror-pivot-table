@@ -1,2 +1,35 @@
-<h1>Stocks#index</h1>
-<p>Find me in app/views/stocks/index.html.erb</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        <span>Имя товара</span>
+      </th>
+      <th>
+        <span>Артикул</span>
+      </th>
+      <th>
+        <span>Имя склада</span>
+      </th>
+
+      <% @range.each do |date| %>
+        <th>
+          <%= date.strftime("%d.%m.%Y") %>
+        </th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @table_data.each do |row| %>
+        <tr>
+          <td><%= row[:product_name] %></td>
+          <td><%= row[:variant_sku] %></td>
+          <td><%= row[:warehouse_name] %></td>
+          <% @range.each do |date| %>
+            <td>
+              <%= row[:stocks][date]&.quantity || 0 %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
